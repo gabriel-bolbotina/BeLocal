@@ -23,7 +23,8 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.example.be_local_app"
+  ndkVersion = "25.1.8937393"
+  namespace "com.example.be_local_app"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 

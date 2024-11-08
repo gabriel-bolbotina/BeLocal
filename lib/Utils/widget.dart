@@ -69,10 +69,10 @@ class BLButtonWidget extends StatefulWidget {
   final bool showLoadingIndicator;
 
   @override
-  State<BLButtonWidget> createState() => _FFButtonWidgetState();
+  State<BLButtonWidget> createState() => _BLButtonWidgetState();
 }
 
-class _FFButtonWidgetState extends State<BLButtonWidget> {
+class _BLButtonWidgetState extends State<BLButtonWidget> {
   bool loading = false;
 
   int get maxLines => widget.options.maxLines ?? 1;
