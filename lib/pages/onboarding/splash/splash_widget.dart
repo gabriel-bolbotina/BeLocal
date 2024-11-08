@@ -1,10 +1,13 @@
 import 'package:be_local_app/Utils/be_plant_theme.dart';
+import 'package:be_local_app/pages/onboarding/onboarding/onboarding_create_account_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import '../../../Utils/model.dart';
 import 'splash_screen.dart';
 import '../../../Utils/widget.dart';
 export 'splash_screen.dart';
+import 'package:rive/rive.dart';
 
 class SplashWidget extends StatefulWidget {
   const SplashWidget({super.key});
@@ -55,14 +58,11 @@ class _SplashWidgetState extends State<SplashWidget> {
                       Container(
                         width: 150.0,
                         height: 150.0,
+                        child: RiveAnimation.asset(
+                          'assets/rive/farmer-3.riv',
+                        ),
                         decoration: BoxDecoration(
-                          color: BePlantTheme.of(context).primary,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: Image.network(
-                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/keywjn2qqtc8/Plagte.png',
-                            ).image,
-                          ),
+                          color:Colors.transparent,
                           borderRadius: BorderRadius.circular(32.0),
                         ),
                       ),
@@ -120,10 +120,13 @@ class _SplashWidgetState extends State<SplashWidget> {
                         logFirebaseEvent('Button_haptic_feedback');
                         HapticFeedback.lightImpact();
                         logFirebaseEvent('Button_navigate_to');
+                        */
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const OnboardingCreateAccountWidget(),),);
 
-                        context.pushNamed('Onboarding_Slideshow');
 
-                         */
+
                       },
                       text: 'Get Started',
                       options: BLButtonOptions(
