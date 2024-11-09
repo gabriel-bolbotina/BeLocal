@@ -1,6 +1,6 @@
 import 'package:be_local_app/Utils/be_plant_theme.dart';
-import 'package:be_local_app/pages/onboarding/onboarding/onboarding_create_account_widget.dart';
-import 'package:be_local_app/pages/onboarding/onboarding/onboarding_infos_widget.dart';
+import 'package:be_local_app/pages/onboarding/onboarding_create_account/onboarding_create_account_widget.dart';
+import 'package:be_local_app/pages/onboarding/onboarding_slideshow/onboarding_infos_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';

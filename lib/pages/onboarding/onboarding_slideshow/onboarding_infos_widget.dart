@@ -2,7 +2,7 @@
 import 'package:be_local_app/Utils/be_plant_theme.dart';
 import 'package:be_local_app/Utils/util.dart';
 import 'package:be_local_app/Utils/widget.dart';
-import 'package:be_local_app/pages/onboarding/onboarding/onboarding_create_account_widget.dart';
+import 'package:be_local_app/pages/onboarding/onboarding_create_account/onboarding_create_account_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
 as smooth_page_indicator;
 import 'package:flutter/material.dart';
