@@ -127,7 +127,7 @@ class _SplashWidgetState extends State<SplashWidget> {
                         MaterialPageRoute(builder: (context) => const OnboardingSlideshowWidget(),),);
 
                       },
-                      text: 'Get Started',
+                      text: 'Haide să începem!',
                       options: BLButtonOptions(
                         width: double.infinity,
                         height: 50.0,
@@ -174,7 +174,7 @@ class _SplashWidgetState extends State<SplashWidget> {
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: 'Already a member?  ',
+                                    text: 'Ai deja cont?  ',
                                     style: BePlantTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -183,7 +183,7 @@ class _SplashWidgetState extends State<SplashWidget> {
                                     ),
                                   ),
                                   TextSpan(
-                                    text: 'Sign In',
+                                    text: 'Introdu datele',
                                     style: BePlantTheme.of(context)
                                         .bodyMedium
                                         .override(

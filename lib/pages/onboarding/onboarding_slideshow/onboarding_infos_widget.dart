@@ -279,7 +279,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 32.0),
                                             child: Text(
-                                              'Local, Customized\nFood from producers',
+                                              'Mâncare locală\nPe gustul tău, chiar de la producători',
                                               textAlign: TextAlign.center,
                                               style:
                                               BePlantTheme.of(context)
@@ -307,7 +307,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 48.0, 0.0, 0.0),
                                             child: Text(
-                                              'Shop, look up and find food yielded from local producers',
+                                              'Caută, descoperă și cumpără produse recoltate din împrejurimi ',
                                               textAlign: TextAlign.center,
                                               style:
                                               BePlantTheme.of(context)
@@ -332,7 +332,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 32.0),
                                             child: Text(
-                                              'Delicious and Nutritious Fresh Vegetables',
+                                              'Legume și fructe, delicioase și sănătoase',
                                               textAlign: TextAlign.center,
                                               style:
                                               BePlantTheme.of(context)
@@ -360,7 +360,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 48.0, 0.0, 0.0),
                                             child: Text(
-                                              'Enjoy healthy and delicious produce delivered to your doorstep, prepared with fresh, high-quality ingredients.',
+                                              'Bucură-te de produse sănătoase și nutritive, livrate de la producători către cea mai apropiată piață',
                                               textAlign: TextAlign.center,
                                               style:
                                               BePlantTheme.of(context)
@@ -385,7 +385,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 32.0),
                                             child: Text(
-                                              'No pesticieds,\nHassle-Free',
+                                              'Fără E-uri,\nFără probleme',
                                               textAlign: TextAlign.center,
                                               style:
                                               BePlantTheme.of(context)
@@ -413,7 +413,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 48.0, 0.0, 0.0),
                                             child: Text(
-                                              'Savor chef-inspired meals without the hassle of cooking or cleaning up, with our gourmet meal delivery service.',
+                                              'Ingrediente fresh pentru orice tip de mâncare pe care dorești să o faci!',
                                               textAlign: TextAlign.center,
                                               style:
                                               BePlantTheme.of(context)
@@ -511,7 +511,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                             context,
                             MaterialPageRoute(builder: (context) => const UserTypeSlideshowWidget(),),);
                         },
-                        text: 'Continue',
+                        text: 'Continuă',
                         options: BLButtonOptions(
                           width: double.infinity,
                           height: 50.0,

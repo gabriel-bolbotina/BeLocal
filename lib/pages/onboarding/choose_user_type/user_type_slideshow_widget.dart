@@ -12,6 +12,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../../../Utils/animations.dart';
 import '../../../Utils/model.dart';
 import '../../../components/custom_app_bar_widget.dart';
+import '../onboarding_address/address.dart';
 import '../onboarding_slideshow/onboarding_infos_model.dart';
 
 class UserTypeSlideshowWidget extends StatefulWidget {
@@ -286,8 +287,8 @@ class _UserTypeSlideshowWidgetState extends State<UserTypeSlideshowWidget>
                                               padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
-                                              child: Image.network(
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/2pdvx24wzpi2/Food1.png',
+                                              child: Image.asset(
+                                                "assets/photos/distribution.png",
                                                 height: 250.0,
                                                 fit: BoxFit.fill,
                                               ).animateOnPageLoad(animationsMap[
@@ -334,7 +335,7 @@ class _UserTypeSlideshowWidgetState extends State<UserTypeSlideshowWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 32.0),
                                               child: Text(
-                                                'Delicious and Nutritious Fresh Vegetables',
+                                                'Utilizator Cumpărător',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                 BePlantTheme.of(context)
@@ -350,8 +351,8 @@ class _UserTypeSlideshowWidgetState extends State<UserTypeSlideshowWidget>
                                               padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   24.0, 0.0, 24.0, 0.0),
-                                              child: Image.network(
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/og5l0duupnzv/Chef_Cooking.png',
+                                              child: Image.asset(
+                                                "assets/photos/vegetables.png",
                                                 height: 250.0,
                                                 fit: BoxFit.contain,
                                               ).animateOnPageLoad(animationsMap[
@@ -362,7 +363,7 @@ class _UserTypeSlideshowWidgetState extends State<UserTypeSlideshowWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 48.0, 0.0, 0.0),
                                               child: Text(
-                                                'Enjoy healthy and delicious produce delivered to your doorstep, prepared with fresh, high-quality ingredients.',
+                                                'Bucură-te de produse proaspete și recoltate din împrejurimi, descoperă un nou mod de a comandat produse locale',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                 BePlantTheme.of(context)
@@ -460,7 +461,7 @@ class _UserTypeSlideshowWidgetState extends State<UserTypeSlideshowWidget>
                           if(_model.pageViewController?.page == 1.0){
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => const OnboardingCreateAccountWidget(),),);
+                              MaterialPageRoute(builder: (context) => const OnboardingAddressWidget(),),);
                             print("mergem pe pagina de utilizator \n");
                           }
                           if(_model.pageViewController?.page == 0.0) {
@@ -471,7 +472,7 @@ class _UserTypeSlideshowWidgetState extends State<UserTypeSlideshowWidget>
                             print("mergem pe pagina de producator \n");
                           }
                         },
-                        text: 'Continue',
+                        text: 'Continuă',
                         options: BLButtonOptions(
                           width: double.infinity,
                           height: 50.0,
