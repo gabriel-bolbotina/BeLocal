@@ -2,6 +2,7 @@
 import 'package:be_local_app/Utils/be_plant_theme.dart';
 import 'package:be_local_app/Utils/util.dart';
 import 'package:be_local_app/Utils/widget.dart';
+import 'package:be_local_app/pages/onboarding/choose_user_type/user_type_slideshow.dart';
 import 'package:be_local_app/pages/onboarding/onboarding_create_account/onboarding_create_account_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
 as smooth_page_indicator;
@@ -11,20 +12,19 @@ import 'package:flutter_animate/flutter_animate.dart';
 import '../../../Utils/animations.dart';
 import '../../../Utils/model.dart';
 import '../../../components/custom_app_bar_widget.dart';
-import '../choose_user_type/user_type_slideshow_widget.dart';
-import 'onboarding_infos_model.dart';
+import '../onboarding_slideshow/onboarding_infos_model.dart';
 
-class OnboardingSlideshowWidget extends StatefulWidget {
-  const OnboardingSlideshowWidget({super.key});
+class UserTypeSlideshowWidget extends StatefulWidget {
+  const UserTypeSlideshowWidget({super.key});
 
   @override
-  State<OnboardingSlideshowWidget> createState() =>
-      _OnboardingSlideshowWidgetState();
+  State<UserTypeSlideshowWidget> createState() =>
+      _UserTypeSlideshowWidgetState();
 }
 
-class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
+class _UserTypeSlideshowWidgetState extends State<UserTypeSlideshowWidget>
     with TickerProviderStateMixin {
-  late OnboardingSlideshowModel _model;
+  late UserTypeSlideshowModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -33,7 +33,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OnboardingSlideshowModel());
+    _model = createModel(context, () => UserTypeSlideshowModel());
 /*
     logFirebaseEvent('screen_view',
         parameters: {'screen_name': 'Onboarding_Slideshow'});
@@ -98,25 +98,6 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation3': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
-          ),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 0.0.ms,
-            duration: 600.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-        ],
-      ),
       'imageOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
@@ -136,7 +117,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation4': AnimationInfo(
+      'textOnPageLoadAnimation3': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 1.ms),
@@ -156,7 +137,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation5': AnimationInfo(
+      'textOnPageLoadAnimation4': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           ScaleEffect(
@@ -269,164 +250,133 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                         PageController(initialPage: 0),
                                     scrollDirection: Axis.horizontal,
                                     children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 32.0),
-                                            child: Text(
-                                              'Local, Customized\nFood from producers',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                              BePlantTheme.of(context)
-                                                  .displaySmall
-                                                  .override(
-                                                fontFamily: 'Urbanist',
-                                                letterSpacing: 0.0,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation1']!),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                24.0, 0.0, 24.0, 0.0),
-                                            child: Image.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/2pdvx24wzpi2/Food1.png',
-                                              height: 250.0,
-                                              fit: BoxFit.fill,
-                                            ).animateOnPageLoad(animationsMap[
-                                            'imageOnPageLoadAnimation1']!),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 48.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Shop, look up and find food yielded from local producers',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                              BePlantTheme.of(context)
-                                                  .labelLarge
-                                                  .override(
-                                                fontFamily:
-                                                'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation2']!),
-                                          ),
-                                        ],
+                                      InkWell(
+                                        onTap:(){
+                                          print("image tapped");
+                                          print(_model.pageViewController?.page);
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => const OnboardingCreateAccountWidget(),),);
+
+
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 32.0),
+                                              child: Text(
+                                                'Producător Local \n ',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                BePlantTheme.of(context)
+                                                    .displaySmall
+                                                    .override(
+                                                  fontFamily: 'Urbanist',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                              'textOnPageLoadAnimation1']!),
+                                            ),
+                                            Padding(
+                                              padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                              child: Image.network(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/2pdvx24wzpi2/Food1.png',
+                                                height: 250.0,
+                                                fit: BoxFit.fill,
+                                              ).animateOnPageLoad(animationsMap[
+                                              'imageOnPageLoadAnimation1']!),
+                                            ),
+                                            Padding(
+                                              padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 48.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Adaugă, comercializează și vinde produse create și recoltate de către tine',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                BePlantTheme.of(context)
+                                                    .labelLarge
+                                                    .override(
+                                                  fontFamily:
+                                                  'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                              'textOnPageLoadAnimation2']!),
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 32.0),
-                                            child: Text(
-                                              'Delicious and Nutritious Fresh Vegetables',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                              BePlantTheme.of(context)
-                                                  .displaySmall
-                                                  .override(
-                                                fontFamily: 'Urbanist',
-                                                letterSpacing: 0.0,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation3']!),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                24.0, 0.0, 24.0, 0.0),
-                                            child: Image.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/og5l0duupnzv/Chef_Cooking.png',
-                                              height: 250.0,
-                                              fit: BoxFit.contain,
-                                            ).animateOnPageLoad(animationsMap[
-                                            'imageOnPageLoadAnimation2']!),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 48.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Enjoy healthy and delicious produce delivered to your doorstep, prepared with fresh, high-quality ingredients.',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                              BePlantTheme.of(context)
-                                                  .labelLarge
-                                                  .override(
-                                                fontFamily:
-                                                'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation4']!),
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 32.0),
-                                            child: Text(
-                                              'No pesticieds,\nHassle-Free',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                              BePlantTheme.of(context)
-                                                  .displaySmall
-                                                  .override(
-                                                fontFamily: 'Urbanist',
-                                                letterSpacing: 0.0,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation5']!),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                24.0, 0.0, 24.0, 0.0),
-                                            child: Image.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/jevo7qiwpcte/Customers_Enjoy_Food.png',
-                                              height: 250.0,
-                                              fit: BoxFit.contain,
-                                            ).animateOnPageLoad(animationsMap[
-                                            'imageOnPageLoadAnimation3']!),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 48.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Savor chef-inspired meals without the hassle of cooking or cleaning up, with our gourmet meal delivery service.',
-                                              textAlign: TextAlign.center,
-                                              style:
-                                              BePlantTheme.of(context)
-                                                  .labelLarge
-                                                  .override(
-                                                fontFamily:
-                                                'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                              ),
-                                            ).animateOnPageLoad(animationsMap[
-                                            'textOnPageLoadAnimation6']!),
-                                          ),
-                                        ],
+                                      InkWell(
+                                        onTap:(){
+                                          print("image tapped");
+                                          print(_model.pageViewController?.page);
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => const OnboardingCreateAccountWidget(),),);
+
+
+                                        },
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 32.0),
+                                              child: Text(
+                                                'Delicious and Nutritious Fresh Vegetables',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                BePlantTheme.of(context)
+                                                    .displaySmall
+                                                    .override(
+                                                  fontFamily: 'Urbanist',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                              'textOnPageLoadAnimation3']!),
+                                            ),
+                                            Padding(
+                                              padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 24.0, 0.0),
+                                              child: Image.network(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/meal-planner-3nia1o/assets/og5l0duupnzv/Chef_Cooking.png',
+                                                height: 250.0,
+                                                fit: BoxFit.contain,
+                                              ).animateOnPageLoad(animationsMap[
+                                              'imageOnPageLoadAnimation2']!),
+                                            ),
+                                            Padding(
+                                              padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 48.0, 0.0, 0.0),
+                                              child: Text(
+                                                'Enjoy healthy and delicious produce delivered to your doorstep, prepared with fresh, high-quality ingredients.',
+                                                textAlign: TextAlign.center,
+                                                style:
+                                                BePlantTheme.of(context)
+                                                    .labelLarge
+                                                    .override(
+                                                  fontFamily:
+                                                  'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                              ).animateOnPageLoad(animationsMap[
+                                              'textOnPageLoadAnimation4']!),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -440,7 +390,7 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                                         .SmoothPageIndicator(
                                       controller: _model.pageViewController ??=
                                           PageController(initialPage: 0),
-                                      count: 3,
+                                      count: 2,
                                       axisDirection: Axis.horizontal,
                                       onDotClicked: (i) async {
                                         await _model.pageViewController!
@@ -507,9 +457,19 @@ class _OnboardingSlideshowWidgetState extends State<OnboardingSlideshowWidget>
                           }
 
                            */
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const UserTypeSlideshowWidget(),),);
+                          if(_model.pageViewController?.page == 1.0){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const OnboardingCreateAccountWidget(),),);
+                            print("mergem pe pagina de utilizator \n");
+                          }
+                          if(_model.pageViewController?.page == 0.0) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (
+                                  context) => const OnboardingCreateAccountWidget(),),);
+                            print("mergem pe pagina de producator \n");
+                          }
                         },
                         text: 'Continue',
                         options: BLButtonOptions(
